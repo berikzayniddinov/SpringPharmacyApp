@@ -7,4 +7,5 @@ import java.util.List;
 public interface MedicineServiceInterface {
     Medicines addMedicine(Medicines medicines);
     List<Medicines> findAllMedicines();
+    Optional<Medicines> findMedicineByMedicineId(Integer medicine_id);
 }
