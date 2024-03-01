@@ -25,6 +25,14 @@ public class MedicineController {
     public List<Medicines> getAllMedicines() {
         return medicineService.findAllMedicines();
     }
-
-
+    @GetMapping("id/{medicine_id}")
+    public  ResponseEntity<Medicines> getMedicineById(@PathVariable Integer medicine_id){
+        Optional<Medicines> medicine = medicineService.findMedicineByMedicineId(medicine_id);
+        if (medicine.isPresent()) {
+            return ResponseEntity.ok(medicine.get());
+        }
+        else{
+            return ResponseEntity.notFound().build();
+        }
+        }
 }
