@@ -42,5 +42,9 @@ public class CustomerController {
             return ResponseEntity.notFound().build();
             }
         }
+    @PostMapping("/addcustomer")
+    public Customers addCustomer(@RequestBody Customers customers){
+        return customerService.addCustomer(customers);
+    }
 
 }
