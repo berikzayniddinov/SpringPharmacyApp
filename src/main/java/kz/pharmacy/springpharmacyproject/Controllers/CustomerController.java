@@ -32,5 +32,15 @@ public class CustomerController {
         List<Customers> customers = customerService.findAllCustomers();
         return ResponseEntity.ok(customers);
     }
+    @GetMapping("/customer_id/{customer_id}")
+    public ResponseEntity<Customers> getCustomerById(@PathVariable Integer customer_id){
+        Optional<Customers> customer = customerService.findById(customer_id);
+        if (customer.isPresent()) {
+            return ResponseEntity.ok(customer.get());
+        }
+        else{
+            return ResponseEntity.notFound().build();
+            }
+        }
 
 }
