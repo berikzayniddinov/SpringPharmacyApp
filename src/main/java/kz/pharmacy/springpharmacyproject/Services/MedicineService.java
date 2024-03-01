@@ -25,5 +25,9 @@ public class MedicineService  implements MedicineServiceInterface {
 
         return medicineRepository.findAll();
     }
+    @Override
+    public Optional<Medicines> findMedicineByMedicineId(Integer medicine_id){
+        return medicineRepository.findMedicineByMedicineId(medicine_id);
+    }
 }
 
