@@ -9,4 +9,5 @@ public interface CustomerServiceInterface {
     Customers registerCustomer(Customers customers);
     Optional<Customers> authenticateCustomer(String firstName, String phoneNumber);
     List<Customers> findAllCustomers();
+    Optional<Customers> findById(Integer customer_id);
 }
