@@ -33,5 +33,14 @@ public class CustomerService  implements CustomerServiceInterface {
     public List<Customers> findAllCustomers() {
         return customerRepository.findAll();
     }
-
+    
+    @Override
+    public Optional<Customers> findById(Integer customer_id){
+        return customerRepository.findById(customer_id);
+    
+    }
+    public Customers addCustomer(Customers customers){
+        return customerRepository.save(customers);
+    }
+    
 }
